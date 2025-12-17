@@ -19,7 +19,7 @@ videos.forEach(video => {
     });
 });
 
-/* Simple fade-in effect */
+/* Fade-in effect on scroll */
 window.addEventListener("scroll", () => {
     document.querySelectorAll(".tab-content").forEach(sec => {
         sec.style.opacity = "1";
