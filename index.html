@@ -1,166 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allai Valley | Heritage & Nature</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<title>Allai Valley | Heritage & Nature</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-bg">
+
+<div class="overlay"></div>
 
 <div class="container">
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <h1>Allai Valley</h1>
-        <p>Preserving Heritage • Celebrating Nature</p>
-    </header>
+<!-- HERO SECTION -->
+<header class="hero">
+    <h1>Allai Valley</h1>
+    <p>Preserving Heritage • Celebrating Nature</p>
+</header>
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav>
-        <button class="tab-btn active" onclick="openTab('home', this)">Home</button>
-        <button class="tab-btn" onclick="openTab('history', this)">History</button>
-        <button class="tab-btn" onclick="openTab('culture', this)">Culture</button>
-        <button class="tab-btn" onclick="openTab('places', this)">Places</button>
-        <button class="tab-btn" onclick="openTab('wildlife', this)">Wildlife</button>
-    </nav>
+<!-- NAVIGATION -->
+<nav>
+    <button class="tab-btn active" onclick="openTab('home', this)">Home</button>
+    <button class="tab-btn" onclick="openTab('history', this)">History</button>
+    <button class="tab-btn" onclick="openTab('culture', this)">Culture</button>
+    <button class="tab-btn" onclick="openTab('places', this)">Places</button>
+    <button class="tab-btn" onclick="openTab('wildlife', this)">Wildlife</button>
+</nav>
 
-    <!-- ================= HOME ================= -->
-    <section id="home" class="tab-content active">
+<!-- HOME TAB -->
+<section id="home" class="tab-content active">
+    <div class="home-text">
         <h2>Welcome to Allai Valley</h2>
-        <p>
-            Allai Valley is a breathtaking region located in Hazara Division, Khyber Pakhtunkhwa.
-            This website is created to promote the rich history, culture, and natural beauty of my homeland.
-        </p>
+        <p>Allai Valley is a mountainous region in Hazara Division, Khyber Pakhtunkhwa. 
+        Experience the pristine meadows, sparkling streams, and majestic mountains that define its beauty.</p>
+    </div>
 
-        <h3>Valley Highlights</h3>
-        <div class="video-wrap">
-            <video controls><source src="me.mp4"></video>
-            <video controls><source src="busarosar.mp4"></video>
-            <video controls><source src="snow.mp4"></video>
-        </div>
-    </section>
+    <h3 class="scenic-title">Scenic Glimpse of Allai</h3>
+    <div class="video-wrap">
+        <video controls><source src="videos/me.mp4"></video>
+        <video controls><source src="videos/busarosar.mp4"></video>
+        <video controls><source src="videos/snow.mp4"></video>
+    </div>
+</section>
 
-    <!-- ================= HISTORY ================= -->
-    <section id="history" class="tab-content">
-        <h2>History of Allai Valley</h2>
-        <p>
-            Allai Valley was an independent tribal state from <strong>1595 to 1971</strong>,
-            ruled by the Nawabs of Allai from the Bebal subsection of the Gabri Swati tribe.
-            The state maintained its own currency and administrative system.
-        </p>
-        <p>
-            <strong>Nawab Arsala Khan Swati</strong> is remembered as a legendary leader who strongly
-            resisted British colonial rule and led the Independent Swatis.
-            The historical capital of Allai was <strong>Pokal</strong>.
-        </p>
-        <p>
-            In <strong>2005</strong>, a devastating earthquake struck Allai.
-            Before the earthquake, houses were constructed mainly from clay, mud, and wood.
-            After the disaster, the architecture completely transformed, and concrete structures
-            became common across the valley.
-        </p>
-        <p>
-            Allai was officially declared a district on <strong>January 23, 2023</strong>.
-            The current MNA is <strong>Prince Muhammad Nawaz</strong>,
-            and the current MPA is <strong>Engineer Zubair Khan</strong>.
-        </p>
-    </section>
+<!-- HISTORY TAB -->
+<!-- HISTORY -->
+<section id="history" class="tab-content">
+    <h2>History of Allai Valley</h2>
 
-    <!-- ================= CULTURE ================= -->
-    <section id="culture" class="tab-content">
-        <h2>Culture & Lifestyle</h2>
+    <div class="timeline">
+        <div class="timeline-line"></div>
 
-        <h3>Traditional Clothing</h3>
-        <div class="culture-card">
-            <img src="adam.jfif" alt="Traditional Dress">
-            <img src="adamkhan.jfif" alt="Traditional Dress with Pakol">
-            <p>
-                Men wear Shalwar Kameez with Pakol, while elders wear Parke.
-                Women wear Shalwar Kameez with Burqa or Padhune.
-                Clothing reflects Pakhtun values and mountain climate.
-            </p>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>1595 - 1971</h3>
+                <p>Allai Valley was an independent tribal state ruled by the Nawabs of Allai from the Bebal subsection of the Gabri Swati tribe. Maintained its own administrative system and currency.</p>
+            </div>
         </div>
 
-        <h3>Values & Traditions</h3>
-        <p>
-            Respect for elders, joint family system, hospitality, and modesty
-            are core values of Allai society.
-        </p>
-
-        <h3>Cuisine of Allai</h3>
-        <p>
-            Traditional food includes maize bread with Allai Saag, lassi,
-            Gungri in winters, bean stews, rice flour bread, paneer,
-            Ghunzakhi, Gulgule, and Weshala.
-        </p>
-
-        <div class="video-wrap">
-            <video controls><source src="food1.mp4"></video>
-            <video controls><source src="food2.mp4"></video>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Legendary Leadership</h3>
+                <p>Nawab Arsala Khan Swati strongly resisted British colonial rule and led the Independent Swatis. Pokal served as the historical capital.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- ================= PLACES ================= -->
-    <section id="places" class="tab-content">
-        <h2>Places to Visit</h2>
-
-        <div class="places-wrap">
-            <div class="place-box"><img src="choro.jfif"><h4>Choro Meadows</h4></div>
-            <div class="place-box"><img src="kopra.jfif"><h4>Kopra Meadows</h4></div>
-            <div class="place-box"><img src="chail.jfif"><h4>Chail Meadows</h4></div>
-            <div class="place-box"><img src="kaperolake.jpg"><h4>Sukai Sar</h4></div>
-            <div class="place-box"><img src="dam.jfif"><h4>Thilus Dam</h4></div>
-            <div class="place-box"><img src="sradanda.jfif"><h4>Red Lake (Busaro Sar)</h4></div>
-            <div class="place-box"><img src="waterfall.jfif"><h4>Rashang Nalla Waterfall</h4></div>
-            <div class="place-box"><img src="allai.jfif"><h4>Pokal Allai</h4></div>
-            <div class="place-box"><img src="village.jfif"><h4>Allai Villages</h4></div>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Swati Influence</h3>
+                <p>The Gabri Swati subgroup and other Swati clans were influential in Hazara and surrounding areas. Known for their tribal structure and defense of their territories.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- ================= WILDLIFE ================= -->
-    <section id="wildlife" class="tab-content">
-        <h2>Wildlife & Nature</h2>
-        <h3>Forests of Allai</h3>
-        <ul>
-            <li>Deodar</li>
-            <li>Pine</li>
-            <li>Chir</li>
-        </ul>
-        <h3>Wildlife</h3>
-        <ul>
-            <li>Snow Leopard</li>
-            <li>Lynx</li>
-            <li>Bears (Black & Brown)</li>
-            <li>Wild Cats</li>
-            <li>Horses</li>
-            <li>Monkeys</li>
-        </ul>
-        <h3>Birds</h3>
-        <ul>
-            <li>Pigeons</li>
-            <li>Ducks</li>
-            <li>Cuckoos</li>
-            <li>Woodpeckers</li>
-        </ul>
-
-        <div class="video-wrap">
-            <video controls><source src="cow.mp4"></video>
-            <video controls><source src="horses.mp4"></video>
-            <video controls><source src="hamster.mp4"></video>
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Cultural Diversity</h3>
+                <p>People of Allai today include Swatis and Gujjars. Gujjar communities traditionally speak Hindko while also using Pashto, showing the valley's linguistic diversity.</p>
+            </div>
         </div>
-    </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <p>Made to Promote the Heritage of Allai Valley</p>
-        <a href="https://www.instagram.com/adamkhan4130/" target="_blank">Instagram</a>
-        <a href="https://github.com/Adam-khan-2004" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/adam-khan-871336340/" target="_blank">LinkedIn</a>
-    </footer>
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>2005 Earthquake</h3>
+                <p>The devastating earthquake destroyed homes built of clay, wood, and mud. Reconstruction led to modern concrete structures.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>District Status</h3>
+                <p>Allai was officially declared a district on January 23, 2023. Current leadership includes Prince Muhammad Nawaz (MNA) and Engineer Zubair Khan (MPA).</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Legacy</h3>
+                <p>Allai Valley continues to be rich in tradition, tribal heritage, and natural beauty, with history tied to tribal rulership and resilience against disasters.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CULTURE TAB -->
+<section id="culture" class="tab-content">
+    <h2>Culture & Lifestyle</h2>
+
+    <h3>Traditional Clothing</h3>
+    <div class="culture-card">
+        <img src="images/adam.jfif">
+        <img src="images/adamkhan.jfif">
+        <p>Men wear Shalwar Kameez with Pakol. Women wear Burqa or Padhune.</p>
+    </div>
+
+    <h3>Cuisine of Allai</h3>
+    <div class="video-wrap">
+        <video controls><source src="videos/food1.mp4"></video>
+        <video controls><source src="videos/food2.mp4"></video>
+    </div>
+</section>
+
+<!-- PLACES TAB -->
+<section id="places" class="tab-content">
+    <h2>Places to Visit</h2>
+
+    <div class="places-wrap">
+        <div class="place-card" onclick="openPlace('galai')"><img src="images/choro.jfif"><h4>Galai Meadows</h4></div>
+        <div class="place-card" onclick="openPlace('sukai')"><img src="images/kaperolake.jpg"><h4>Sukai Sar</h4></div>
+        <div class="place-card" onclick="openPlace('choro')"><img src="images/choro.jfif"><h4>Choro Meadows</h4></div>
+        <div class="place-card" onclick="openPlace('kopra')"><img src="images/kopra.jfif"><h4>Kopra / Chail</h4></div>
+        <div class="place-card" onclick="openPlace('busaro')"><img src="images/sradanda.jfif"><h4>Busaro Sar</h4></div>
+        <div class="place-card" onclick="openPlace('pokal')"><img src="images/allai.jfif"><h4>Pokal Allai</h4></div>
+        <div class="place-card" onclick="openPlace('rashang')"><img src="images/waterfall.jfif"><h4>Rashang Waterfall</h4></div>
+        <div class="place-card" onclick="openPlace('dam')"><img src="images/dam.jfif"><h4>Allai Dam</h4></div>
+    </div>
+
+    <div id="placeInfo" class="place-info">
+        <span class="close-btn" onclick="closePlace()">✖</span>
+        <div id="placeContent"></div>
+    </div>
+</section>
+
+<!-- WILDLIFE TAB -->
+<section id="wildlife" class="tab-content">
+    <h2>Wildlife & Nature</h2>
+    <ul>
+        <li>Snow Leopard</li>
+        <li>Bears</li>
+        <li>Lynx</li>
+        <li>Bird Species</li>
+    </ul>
+    <div class="video-wrap">
+        <video controls><source src="videos/cow.mp4"></video>
+        <video controls><source src="videos/horses.mp4"></video>
+        <video controls><source src="videos/hamster.mp4"></video>
+    </div>
+</section>
+
+<footer>
+    <p>Made to Promote the Heritage of Allai Valley</p>
+</footer>
 
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
-
