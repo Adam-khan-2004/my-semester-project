@@ -1,196 +1,98 @@
-/* GLOBAL RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body { font-family:'Playfair Display', serif; color:#F8F9FA; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Playfair Display',serif;color:#F8F9FA}
 
-/* HERO BACKGROUND */
-body.home-bg {
-    background: url('images/allai_bg.jpg') no-repeat center center/cover fixed;
-    position: relative;
+body.home-bg{
+    background:url("images/village.jfif") no-repeat center/cover fixed;
 }
-.overlay {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.5);
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(5px);
     z-index:0;
 }
 
-/* CONTAINER */
-.container { width:95%; max-width:1200px; margin:auto; position:relative; z-index:1; }
+.container{
+    position:relative;
+    z-index:1;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
 
-/* HEADER HERO */
-header.hero {
+.hero{text-align:center;padding:80px 20px}
+.hero h1{font-size:3em;color:#D97706}
+.hero p{font-size:1.2em}
+
+nav{text-align:center;margin-bottom:20px}
+.tab-btn{
+    background:rgba(255,255,255,0.15);
+    border:none;
+    padding:10px 20px;
+    margin:5px;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+}
+.tab-btn.active,.tab-btn:hover{background:#D97706;color:#081C15}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.video-wrap,.places-wrap,.culture-card{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+video,img{
+    max-width:100%;
+    border-radius:15px;
+    transition:.3s;
+}
+video:hover,img:hover{transform:translateY(-8px)}
+
+.place-card{
+    width:250px;
+    background:rgba(255,255,255,0.15);
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
     text-align:center;
-    padding:80px 20px 40px 20px;
 }
-header h1 { font-size:3em; color:#D97706; text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
-header p { font-size:1.2em; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
+.place-card img{height:180px;object-fit:cover}
 
-/* NAV */
-nav { display:flex; justify-content:center; flex-wrap:wrap; margin-bottom:20px; position:relative; z-index:1;}
-.tab-btn { background: rgba(255,255,255,0.15); color:#F8F9FA; border:none; padding:10px 20px; margin:5px; border-radius:10px; cursor:pointer; font-weight:bold; backdrop-filter:blur(8px); transition:all 0.3s ease;}
-.tab-btn:hover, .tab-btn.active { background:#D97706; color:#081C15; }
-
-/* TAB CONTENT */
-.tab-content { display:none; animation:fadeIn 0.5s ease-in; padding:20px; position:relative; z-index:1; }
-.tab-content.active { display:block; }
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-
-/* HOME SCENIC TITLE */
-.scenic-title { text-align:center; margin:30px 0 10px 0; font-size:2em; color:#D97706; text-shadow:1px 1px 3px rgba(0,0,0,0.6); }
-
-/* VIDEO WRAP */
-.video-wrap { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin:20px 0; }
-.video-wrap video { width:100%; max-width:420px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.4); }
-
-/* CULTURE CARD */
-.culture-card { display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:center; margin:20px 0; }
-.culture-card img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.4); }
-
-/* PLACES CARDS */
-.places-wrap { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px; }
-.place-card { width:250px; border-radius:15px; overflow:hidden; cursor:pointer; transition:all 0.3s ease; background: rgba(255,255,255,0.15); box-shadow:0 10px 25px rgba(0,0,0,0.4); text-align:center; }
-.place-card img { width:100%; height:180px; object-fit:cover; }
-.place-card h4 { padding:10px; color:#D97706; }
-
-/* PLACE INFO MODAL */
-.place-info { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(0); background:rgba(255,255,255,0.15); backdrop-filter:blur(10px); padding:25px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.5); color:#F8F9FA; z-index:100; max-width:500px; width:90%; transition:transform 0.3s ease-in-out; text-align:left; }
-.place-info.show { transform:translate(-50%,-50%) scale(1); }
-.place-info h2 { color:#D97706; margin-bottom:10px; }
-.place-info p { margin:5px 0; }
-
-/* CLOSE & MAP BUTTON */
-.close-btn { position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.3em; color:#D97706; }
-.map-btn { padding:10px 15px; background:#D97706; border:none; border-radius:10px; color:#081C15; cursor:pointer; font-weight:bold; margin-top:10px; transition:all 0.3s ease;}
-.map-btn:hover { background:#f4a261; }
-
-/* WILDLIFE LIST */
-#wildlife ul { list-style:square; margin-left:40px; margin-bottom:20px; }
-
-/* FOOTER */
-footer { text-align:center; padding:20px; margin-top:40px; font-size:0.9em; color:#F8F9FA; }
-
-/* TEXT OVERLAY */
-.tab-content h2, .tab-content p, .tab-content li, .tab-content h3 { background: rgba(0,0,0,0.5); padding:5px 10px; border-radius:8px; }
-
-/* RESPONSIVE */
-@media (max-width:768px){
-    .places-wrap, .video-wrap, .culture-card{ flex-direction:column; align-items:center; }
-    .place-card, .culture-card img, .video-wrap video{ max-width:90%; }
+.place-info{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:rgba(0,0,0,.8);
+    padding:20px;
+    border-radius:15px;
+    width:90%;
+    max-width:500px;
+    transition:.3s;
+    z-index:10;
 }
-/* HERO & BACKGROUND */
-body.home-bg {
-    background: url('images/village.jfif') no-repeat center center/cover fixed;
-    position: relative;
+.place-info.show{transform:translate(-50%,-50%) scale(1)}
+
+.timeline{max-width:900px;margin:auto;position:relative}
+.timeline-line{position:absolute;left:50%;width:4px;background:#D97706;top:0;bottom:0}
+
+.timeline-item{width:50%;padding:20px}
+.timeline-item.left{text-align:right}
+.timeline-item.right{margin-left:50%}
+
+.timeline-content{
+    background:white;
+    color:#1B4332;
+    padding:15px;
+    border-radius:10px;
 }
 
-/* Overlay for subtle blur and readability */
-.overlay {
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.3); /* lighter black for subtle overlay */
-    backdrop-filter: blur(5px);   /* subtle blur, not too much */
-    z-index:0;
-}
-/* Floating effect on hover for images, videos, and place/culture cards */
-.place-card, 
-.culture-card img, 
-.video-wrap video, 
-.place-card img, 
-.video-wrap video {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.place-card:hover,
-.culture-card img:hover,
-.video-wrap video:hover,
-.place-card img:hover {
-    transform: translateY(-10px) scale(1.05); /* lifts and slightly enlarges */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* subtle shadow for depth */
-}
-.video-wrap video, .place-card img, .culture-card img {
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-}
-
-.map-btn, .tab-btn {
-    transition: all 0.3s ease;
-}
-
-.map-btn:hover, .tab-btn:hover {
-    box-shadow: 0 0 15px #D97706; /* autumn orange glow */
-    transform: scale(1.05);
-}
-/* Timeline */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px 0;
-}
-
-.timeline-line {
-    position: absolute;
-    left: 50%;
-    width: 4px;
-    background: #D97706; /* orange line */
-    top: 0;
-    bottom: 0;
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    padding: 20px 30px;
-    position: relative;
-    width: 50%;
-    box-sizing: border-box;
-}
-
-.timeline-item.left {
-    left: 0;
-    text-align: right;
-}
-
-.timeline-item.right {
-    left: 50%;
-    text-align: left;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #1B4332; /* dark green dot */
-    border-radius: 50%;
-    top: 20px;
-    z-index: 1;
-}
-
-.timeline-item.left::before {
-    right: -10px;
-}
-
-.timeline-item.right::before {
-    left: -10px;
-}
-
-.timeline-content {
-    padding: 15px 20px;
-    background: rgba(248,249,250,0.9); /* mist white with transparency */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.timeline-content h3 {
-    margin-top: 0;
-    color: #D97706; /* autumn orange headings */
-}
-
-.timeline-content p {
-    margin: 0;
-    color: #1B4332; /* dark green text */
-}
+footer{text-align:center;margin-top:40px}
