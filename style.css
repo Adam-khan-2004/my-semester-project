@@ -1,121 +1,196 @@
-* {
+/* GLOBAL RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Playfair Display', serif; color:#F8F9FA; }
+
+/* HERO BACKGROUND */
+body.home-bg {
+    background: url('images/allai_bg.jpg') no-repeat center center/cover fixed;
+    position: relative;
+}
+.overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index:0;
+}
+
+/* CONTAINER */
+.container { width:95%; max-width:1200px; margin:auto; position:relative; z-index:1; }
+
+/* HEADER HERO */
+header.hero {
+    text-align:center;
+    padding:80px 20px 40px 20px;
+}
+header h1 { font-size:3em; color:#D97706; text-shadow:2px 2px 5px rgba(0,0,0,0.7);}
+header p { font-size:1.2em; text-shadow:1px 1px 3px rgba(0,0,0,0.7); }
+
+/* NAV */
+nav { display:flex; justify-content:center; flex-wrap:wrap; margin-bottom:20px; position:relative; z-index:1;}
+.tab-btn { background: rgba(255,255,255,0.15); color:#F8F9FA; border:none; padding:10px 20px; margin:5px; border-radius:10px; cursor:pointer; font-weight:bold; backdrop-filter:blur(8px); transition:all 0.3s ease;}
+.tab-btn:hover, .tab-btn.active { background:#D97706; color:#081C15; }
+
+/* TAB CONTENT */
+.tab-content { display:none; animation:fadeIn 0.5s ease-in; padding:20px; position:relative; z-index:1; }
+.tab-content.active { display:block; }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+
+/* HOME SCENIC TITLE */
+.scenic-title { text-align:center; margin:30px 0 10px 0; font-size:2em; color:#D97706; text-shadow:1px 1px 3px rgba(0,0,0,0.6); }
+
+/* VIDEO WRAP */
+.video-wrap { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin:20px 0; }
+.video-wrap video { width:100%; max-width:420px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.4); }
+
+/* CULTURE CARD */
+.culture-card { display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:center; margin:20px 0; }
+.culture-card img { width:100%; max-width:300px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.4); }
+
+/* PLACES CARDS */
+.places-wrap { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px; }
+.place-card { width:250px; border-radius:15px; overflow:hidden; cursor:pointer; transition:all 0.3s ease; background: rgba(255,255,255,0.15); box-shadow:0 10px 25px rgba(0,0,0,0.4); text-align:center; }
+.place-card img { width:100%; height:180px; object-fit:cover; }
+.place-card h4 { padding:10px; color:#D97706; }
+
+/* PLACE INFO MODAL */
+.place-info { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(0); background:rgba(255,255,255,0.15); backdrop-filter:blur(10px); padding:25px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.5); color:#F8F9FA; z-index:100; max-width:500px; width:90%; transition:transform 0.3s ease-in-out; text-align:left; }
+.place-info.show { transform:translate(-50%,-50%) scale(1); }
+.place-info h2 { color:#D97706; margin-bottom:10px; }
+.place-info p { margin:5px 0; }
+
+/* CLOSE & MAP BUTTON */
+.close-btn { position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.3em; color:#D97706; }
+.map-btn { padding:10px 15px; background:#D97706; border:none; border-radius:10px; color:#081C15; cursor:pointer; font-weight:bold; margin-top:10px; transition:all 0.3s ease;}
+.map-btn:hover { background:#f4a261; }
+
+/* WILDLIFE LIST */
+#wildlife ul { list-style:square; margin-left:40px; margin-bottom:20px; }
+
+/* FOOTER */
+footer { text-align:center; padding:20px; margin-top:40px; font-size:0.9em; color:#F8F9FA; }
+
+/* TEXT OVERLAY */
+.tab-content h2, .tab-content p, .tab-content li, .tab-content h3 { background: rgba(0,0,0,0.5); padding:5px 10px; border-radius:8px; }
+
+/* RESPONSIVE */
+@media (max-width:768px){
+    .places-wrap, .video-wrap, .culture-card{ flex-direction:column; align-items:center; }
+    .place-card, .culture-card img, .video-wrap video{ max-width:90%; }
+}
+/* HERO & BACKGROUND */
+body.home-bg {
+    background: url('images/village.jfif') no-repeat center center/cover fixed;
+    position: relative;
+}
+
+/* Overlay for subtle blur and readability */
+.overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.3); /* lighter black for subtle overlay */
+    backdrop-filter: blur(5px);   /* subtle blur, not too much */
+    z-index:0;
+}
+/* Floating effect on hover for images, videos, and place/culture cards */
+.place-card, 
+.culture-card img, 
+.video-wrap video, 
+.place-card img, 
+.video-wrap video {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.place-card:hover,
+.culture-card img:hover,
+.video-wrap video:hover,
+.place-card img:hover {
+    transform: translateY(-10px) scale(1.05); /* lifts and slightly enlarges */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* subtle shadow for depth */
+}
+.video-wrap video, .place-card img, .culture-card img {
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.map-btn, .tab-btn {
+    transition: all 0.3s ease;
+}
+
+.map-btn:hover, .tab-btn:hover {
+    box-shadow: 0 0 15px #D97706; /* autumn orange glow */
+    transform: scale(1.05);
+}
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background: #D97706; /* orange line */
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    width: 50%;
     box-sizing: border-box;
 }
 
-body {
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #1B4332; /* dark green dot */
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 15px 20px;
+    background: rgba(248,249,250,0.9); /* mist white with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #D97706; /* autumn orange headings */
+}
+
+.timeline-content p {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    font-size: 18px;
-}
-
-header {
-    background: #1f3d2b;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-header h1 {
-    font-size: 3rem;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #2e5d3b;
-}
-
-nav button {
-    padding: 15px 25px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-nav button.active {
-    background: #1f3d2b;
-}
-
-/* MAIN CONTENT AREA */
-.tab-content {
-    display: none;
-    padding: 40px 5%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-/* VIDEOS */
-.video-wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
-
-video {
-    width: 100%;
-    border-radius: 12px;
-}
-
-/* CULTURE */
-.culture-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
-}
-
-.culture-card img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 12px;
-}
-
-/* PLACES */
-.places-wrap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-}
-
-.place-box {
-    background: white;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.place-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-}
-
-.place-box h4 {
-    padding: 15px;
-    font-size: 1.2rem;
-}
-
-/* FOOTER */
-footer {
-    background: #1f3d2b;
-    color: white;
-    text-align: center;
-    padding: 30px;
-    font-size: 1.1rem;
-}
-
-footer a {
-    color: #bfffd2;
-    margin: 0 10px;
-    text-decoration: none;
+    color: #1B4332; /* dark green text */
 }
